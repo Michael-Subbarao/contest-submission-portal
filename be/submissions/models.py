@@ -2,6 +2,9 @@ from django.db import models
 from django.contrib.auth import get_user_model
 
 class Submission(models.Model):
+    author_name = models.CharField(max_length=100)
+    author_bio = models.TextField() 
+    contact_email = models.EmailField()
     title = models.CharField(max_length=255)
     content = models.TextField()
     author = models.ForeignKey(get_user_model(), on_delete=models.CASCADE)

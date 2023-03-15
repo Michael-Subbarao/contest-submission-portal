@@ -6,18 +6,14 @@
     <thead>
       <tr>
         <th>Title</th>
-        <th>Author</th>
         <th>Contest</th>
-        <th>Genre</th>
       </tr>
     </thead>
     <tbody>
       {% for submission in submissions %}
         <tr>
           <td><a href="{% url 'submissions:submission_detail' submission.pk %}">{{ submission.title }}</a></td>
-          <td>{{ submission.author }}</td>
           <td>{{ submission.contest }}</td>
-          <td>{{ submission.genre }}</td>
         </tr>
       {% endfor %}
     </tbody>

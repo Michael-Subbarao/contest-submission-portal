@@ -4,6 +4,17 @@ from django.contrib import messages
 from submissions.models import Submission, Contest, Genre
 from submissions.forms import SubmissionForm
 from .forms import UserRegistrationForm
+from django.contrib.auth.views import LoginView
+from django.urls import reverse_lazy
+
+class CustomLoginView(LoginView):
+    template_name = 'users/login.html' 
+    def get_success_url(self):
+        user = self.request.user
+        if user.groups.filter(name='Judges').exists() or user.is_superuser:
+            return reverse_lazy('submissions:submission_list')
+        else:
+            return reverse_lazy('submissions:submission_create')
 
 def submission_list(request):
     submissions = Submission.objects.all()
