@@ -1,0 +1,10 @@
+{% extends "base.html" %}
+
+{% block content %}
+  <h1>{{ submission.title }}</h1>
+  <p>Author: {{ submission.author }}</p>
+  <p>Contest: {{ submission.contest }}</p>
+  <p>Genre: {{ submission.genre }}</p>
+  <p>Content:</p>
+  <pre>{{ submission.content }}</pre>
+{% endblock %}
