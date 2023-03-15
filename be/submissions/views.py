@@ -1,7 +1,7 @@
 from django.shortcuts import render, get_object_or_404, redirect
 from django.contrib.auth.decorators import login_required
-from .models import Submission, Contest, Genre
-from .forms import SubmissionForm
+from submissions.models import Submission, Contest, Genre
+from submissions.forms import SubmissionForm
 
 def submission_list(request):
     submissions = Submission.objects.all()
