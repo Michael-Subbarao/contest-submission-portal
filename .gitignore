@@ -1,0 +1,42 @@
+# Python files
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.pyc
+
+# Django files
+*.log
+*.pot
+*.pyc
+db.sqlite3
+media/
+
+# Virtual environment
+venv/
+ENV/
+
+# Node.js and npm (if using JavaScript for the frontend)
+node_modules/
+npm-debug.log
+yarn-error.log
+yarn-debug.log
+
+# IDE files
+.vscode/
+.idea/
+*.swp
+*.swo
+*.swn
+
+# macOS files
+.DS_Store
+
+# Windows files
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+
+# PostgreSQL files (if storing data locally for development)
+*.backup
+*.dump
