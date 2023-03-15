@@ -3,6 +3,8 @@ from django.contrib.auth.decorators import login_required
 from submissions.models import Submission, Contest, Genre
 from submissions.forms import SubmissionForm
 
+
+
 def submission_list(request):
     submissions = Submission.objects.all()
     return render(request, 'submissions/submission_list.html', {'submissions': submissions})
@@ -17,7 +19,7 @@ def submission_create(request):
         form = SubmissionForm(request.POST)
         if form.is_valid():
             submission = form.save(commit=False)
-            submission.user = request.user
+            submission.author = request.user
             submission.save()
             return redirect('submissions:submission_detail', pk=submission.pk)
     else:
