@@ -12,6 +12,7 @@
         <h1>Submission Portal</h1>
     </header>
     <nav>
+        <a href="{% url 'submissions:submission_create' %}">Create Submission</a>
         <a href="{% url 'submissions:submission_list' %}">Submissions</a>
         <a href="{% url 'users:login' %}">Login</a>
         <a href="{% url 'users:logout' %}">Logout</a>
